@@ -7,92 +7,63 @@
     font-family: "Raleway", sans-serif;
 }
 
+body {overflow: hidden;}
+
+
+/*TABLE FORMATTING*/
+
+table {
+    margin-top: 20px;
+
+}
+
+table, th, td {
+    border: 0 solid white;
+    border-collapse: separate;
+    border-spacing: 40px;
+}
+
+th, td {
+    background-color: white;
+    height: 100px;
+}
+
+
+.hidden {
+    background-color: white;
+    border-style: none;
+}
+
+
+
+
+
 li::marker {color: blueviolet;}
 ul {list-style-type: '■ '}
 
-div {
-    padding: 7px;
-}
+
 
 .banner {
-    grid-area: banner;
     border: brown 5px solid;
+    width: 66%;
 
     font-size: 2em;
     font-weight: bold;
 }
 
 .menu {
-    grid-area: menu;
     border: khaki 5px solid;
-    position: sticky;
-    top: 0;
 }
 
 .blocks {
-    grid-area: blocks;
-
-    display: flex;
-    flex-direction: column;
-    gap: 40px 0;
-}
-
-body .blocks div {
     border: forestgreen 5px solid;
     width: 100px;
     height: 100%;
 }
 
+
+
 .content {
-    grid-area: content;
     border: darksalmon 5px solid;
 }
 
-
-/*ADAPTIVE VERSION*/
-@media (max-width: 1280px) {
-    .gridLayout {
-        display: block;
-    }
-
-    .blocks {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-}
-
-
-/*PC VERSION*/
-@media  (min-width: 1280px) {
-    .gridLayout {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: repeat(2, auto);
-        grid-template-areas:
-            'banner banner banner banner menu menu'
-            'blocks content content content menu menu';
-
-        gap: 10px 10px;
-    }
-
-    .blocks {
-        grid-area: blocks;
-
-        display: flex;
-        flex-direction: column;
-        gap: 40px 0;
-
-        justify-content: stretch;
-        align-items: center;
-    }
-
-    .blocks div {
-        border: forestgreen 5px solid;
-        width: 100px;
-        height: 100%;
-
-        text-align: center;
-
-    }
-
-}
